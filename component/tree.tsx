@@ -5,7 +5,7 @@ import { RoundedBox } from "@react-three/drei";
 export default function Tree( { position } : { position: [number, number, number] }) {
   return (
     <>
-    <group position={position}>
+    <group position={position} castShadow receiveShadow>
       <RoundedBox position={[0, 0, 0]} args={[0.5, 1, 0.5]} radius={0.05}>
         <meshStandardMaterial color="brown" />
       </RoundedBox>
@@ -24,7 +24,7 @@ export default function Tree( { position } : { position: [number, number, number
         args={[0.3, 0.3, 0.3]} 
         radius={0.05}
       >
-        <meshStandardMaterial color="yellow" emissive="yellow" emissiveIntensity={0.5} />
+        <meshStandardMaterial color="yellow" emissive="yellow" emissiveIntensity={3} />
       </RoundedBox>
     </group>
     </>
