@@ -4,18 +4,17 @@ import Image from "next/image";
 import { Canvas } from "@react-three/fiber"
 import { Box, Environment, OrbitControls, Plane, RoundedBox } from "@react-three/drei";
 import Tree from "@/component/tree";
-import { useGLTF } from "@react-three/drei";
+import { Gltf } from "@react-three/drei";
 import { Bloom, EffectComposer } from "@react-three/postprocessing"
 
 export default function Showroom() {
   //3D 模型預覽說明瀏覽器
-  // const { scene } = useGLTF("http://localhost:3000/cat_in_flowers.glb");
 
   return (
     <>
       <Canvas style={{ width: "100%", height: "100vh" }}>
 
-        {/* <primitive object={scene} /> */}
+        <Gltf src={"/cat_in_flowers.glb"} scale={10} />
 
         <Environment preset="forest" background={true} backgroundBlurriness={0.5} />
         <OrbitControls autoRotate={true} />
@@ -38,5 +37,4 @@ export default function Showroom() {
     </>
   );
 }
-useGLTF.preload("/cat_in_flowers.glb");
 
